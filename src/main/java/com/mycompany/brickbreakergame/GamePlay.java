@@ -74,7 +74,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
             ballxdir = -2;
             g.setColor(new Color(81, 186, 57 ));
             g.setFont(new Font("serif", Font.BOLD,30));
-            g.drawString("Congratulations, You won!! :)", 190, 280);
+            g.drawString("Congratulations, You won!! :)", 190, 260);
             g.drawString(" Score: "+ (int)score, 185, 300);
 
             g.setFont(new Font("serif", Font.BOLD,30));

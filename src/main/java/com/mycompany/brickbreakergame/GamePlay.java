@@ -20,7 +20,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
     private int totalbrick =21;
     private Timer Timer;
     private int delay =8; // milliseconds
-    private int playerx =310;
+    private int playerx =randomInt(90,550);
     private int ballposx = randomInt(90,550);
     private int ballposy = randomInt(300,400);
     private int ballxdir = -2;
@@ -177,7 +177,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
                 ballposx = randomInt(90,550);
                 ballposy= randomInt(300,400);
                 score =0;
-                playerx = 310;
+                playerx = randomInt(90,550);
                 totalbrick = 21;
                 map = new MapGenerator(3,7);
                 

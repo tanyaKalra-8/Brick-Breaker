@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BrickBreakerGame" />
+        <module name="SupplyChain" />
+        <module name="Calculator" />
       </profile>
     </annotationProcessing>
   </component>

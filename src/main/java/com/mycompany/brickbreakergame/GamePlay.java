@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.sql.SQLOutput;
 
 public class GamePlay extends JPanel implements KeyListener, ActionListener
 {
@@ -20,8 +21,8 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
     private Timer Timer;
     private int delay =8; // milliseconds
     private int playerx =310;
-    private int ballposx = 120;
-    private int ballposy = 350;
+    private int ballposx = randomInt(90,550);
+    private int ballposy = randomInt(300,400);
     private int ballxdir = -2;
     private int ballydir = -3;
     private MapGenerator map;
@@ -152,16 +153,16 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
     @Override
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            if(playerx >= 600){
-                playerx =600;
+            if(playerx >= 580){
+                playerx =580;
             }
             else{
                 moveright();
             }
         }
         if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            if(playerx < 10){
-                playerx = 10;
+            if(playerx <= 0){
+                playerx = 0;
             }
             else{
                 moveleft();
@@ -169,10 +170,12 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
         }
         if(e.getKeyCode() == KeyEvent.VK_ENTER){
             if(!play){
-                ballposx = 120;
-                ballposy = 350;
+//                ballposx = 120;
+//                ballposy = 350;
                 ballxdir = -2;
                 ballydir = -3;
+                ballposx = randomInt(90,550);
+                ballposy= randomInt(300,400);
                 score =0;
                 playerx = 310;
                 totalbrick = 21;
@@ -186,5 +189,8 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
     @Override
     public void keyReleased(KeyEvent e) {
         
+    }
+    public int randomInt(int low, int high) {
+        return (int) ((Math.random() * (high-low)) + low);
     }
 }

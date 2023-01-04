@@ -191,6 +191,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener
         
     }
     public int randomInt(int low, int high) {
+
         return (int) ((Math.random() * (high-low)) + low);
     }
 }
